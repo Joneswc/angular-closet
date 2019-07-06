@@ -1,3 +1,6 @@
+se procurar : http://localhost:4200/core/ olhe no network do f12, não vai aparecer o js closet, já que configuramos lazy, no core-routing.modul.ts
+se procurar : http://localhost:4200/core/closet é que vai trazer o js closet
+
 # Closet
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
