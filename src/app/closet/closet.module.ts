@@ -8,6 +8,10 @@ import { ClothesDetailComponent } from './containers/clothes-detail/clothes-deta
 
 @NgModule({
   declarations: [ClothesListComponent, ClothesDetailComponent],
+  exports: [
+    ClothesListComponent,
+    ClothesDetailComponent
+  ],
   imports: [
     CommonModule,
     ClosetRoutingModule
