@@ -6,17 +6,20 @@ import { ClosetListComponent } from './component/closet-list/closet-list.compone
 import { ClothesDetailComponent } from './component/clothes-detail/clothes-detail.component';
 import { ClothesComponent } from './containers/clothes/clothes.component';
 import { ClosetComponent } from './containers/closet/closet.component';
+import {SharedModule} from '../core/shared/shared.module';
 
 
 @NgModule({
   declarations: [ClosetListComponent, ClothesDetailComponent, ClothesComponent, ClosetComponent],
   exports: [
     ClosetListComponent,
-    ClothesDetailComponent
+    ClothesDetailComponent,
+    SharedModule
   ],
   imports: [
     CommonModule,
-    ClosetRoutingModule
+    ClosetRoutingModule,
+    SharedModule
   ]
 })
 export class ClosetModule { }
