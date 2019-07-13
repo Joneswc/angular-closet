@@ -96,7 +96,7 @@ module.exports = "<p>home works!!!</p>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n"
+module.exports = "<mat-sidenav-container fxFlexFill>\n  <mat-sidenav mode=\"over\" #sidenav>\n    <mat-list>\n      <mat-list-item routerLink=\"/core/layout/home\">\n        <mat-icon>home</mat-icon>Home\n      </mat-list-item>\n      <mat-list-item routerLink=\"/core/layout/closet\">\n        <mat-icon>list_view</mat-icon>Clothes\n      </mat-list-item>\n    </mat-list>\n  </mat-sidenav>\n  <mat-sidenav-content fxFlexFill>\n    <mat-toolbar color=\"primary\">\n      <button mat-icon-button (click)=\"sidenav.toggle()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n      Closet\n    </mat-toolbar>\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n\n"
 
 /***/ }),
 
@@ -197,6 +197,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _closet_closet_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./closet/closet.module */ "./src/app/closet/closet.module.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+
 
 
 
@@ -214,7 +216,8 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-                _closet_closet_module__WEBPACK_IMPORTED_MODULE_5__["ClosetModule"]
+                _closet_closet_module__WEBPACK_IMPORTED_MODULE_5__["ClosetModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -500,7 +503,7 @@ var ClothesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvY29udGFpbmVycy9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = ".container {\n  display: -webkit-box;\n  display: flex;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29yZS9jb250YWluZXJzL2hvbWUvQzpcXFVzZXJzXFxjbGF5dG9uLmNoYWdhc1xcV2Vic3Rvcm1Qcm9qZWN0c1xcY2xvc2V0L3NyY1xcYXBwXFxjb3JlXFxjb250YWluZXJzXFxob21lXFxob21lLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb3JlL2NvbnRhaW5lcnMvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usb0JBQUE7RUFBQSxhQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9jb3JlL2NvbnRhaW5lcnMvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxufVxyXG4iLCIuY29udGFpbmVyIHtcbiAgZGlzcGxheTogZmxleDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -659,11 +662,56 @@ var CoreModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _core_routing_module__WEBPACK_IMPORTED_MODULE_3__["CoreRoutingModule"],
-                _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"]
+                _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"],
             ]
         })
     ], CoreModule);
     return CoreModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/shared/material/material.module.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/core/shared/material/material.module.ts ***!
+  \*********************************************************/
+/*! exports provided: MaterialModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterialModule", function() { return MaterialModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+
+
+
+var MaterialModule = /** @class */ (function () {
+    function MaterialModule() {
+    }
+    MaterialModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            declarations: [],
+            imports: [
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSidenavModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"]
+            ],
+            exports: [
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSidenavModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"]
+            ]
+        })
+    ], MaterialModule);
+    return MaterialModule;
 }());
 
 
@@ -682,7 +730,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedModule", function() { return SharedModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _material_material_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./material/material.module */ "./src/app/core/shared/material/material.module.ts");
+
 
 
 
@@ -693,7 +743,12 @@ var SharedModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [],
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"],
+                _material_material_module__WEBPACK_IMPORTED_MODULE_3__["MaterialModule"]
+            ],
+            exports: [
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"],
+                _material_material_module__WEBPACK_IMPORTED_MODULE_3__["MaterialModule"]
             ]
         })
     ], SharedModule);
@@ -741,18 +796,21 @@ var environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
     .catch(function (err) { return console.error(err); });
 
 
